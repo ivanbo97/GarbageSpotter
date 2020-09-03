@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GarbageSpotter</string>
+    <string name="enableGpsText">Enable/Disable the GPS receiver</string>
+    <string name="gpsStatusString">GPS receiver state :</string>
+    <string name="recorBtnString">Locate and take a photo</string>
+    <string name="uploadBtnString">Upload Collected Data</string>
+</resources>
