@@ -2,7 +2,6 @@ var map;
 var layer;
 var LeafIcon = L.Icon.extend({
 options: {
-shadowUrl: 'leaf-shadow.png',
 iconSize:     [38, 95],
 shadowSize:   [50, 64],
 iconAnchor:   [22, 94],
@@ -11,7 +10,7 @@ popupAnchor:  [-3, -76]
 }
 });
 
-var greenIcon = new LeafIcon({iconUrl: 'leaf-green.png'});
+var greenIcon = new LeafIcon({iconUrl: 'rubbish_icon.png'});
 
 function reload_map() {
 	
