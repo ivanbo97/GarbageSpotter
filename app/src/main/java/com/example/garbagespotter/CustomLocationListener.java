@@ -20,7 +20,6 @@ public class CustomLocationListener implements LocationListener {
     private String currentPhotoName;
     private ProgressDialog progressDialog;
     private LocationManager manager;
-    private static boolean firstLocationRegistered;
 
 
     private BufferedWriter bufferedWriter;
@@ -31,15 +30,12 @@ public class CustomLocationListener implements LocationListener {
         this.currentPhotoName = currentPhotoName;
         this.progressDialog = progressDialog;
         this.manager = manager;
-        firstLocationRegistered = false;
 
     }
 
     @Override
     public void onLocationChanged(Location location)  {
 
-
-        if(!firstLocationRegistered) {
 
             try {
                 currentRecFile = createRecFile();
@@ -60,11 +56,11 @@ public class CustomLocationListener implements LocationListener {
                 e.printStackTrace();
             }
 
-            firstLocationRegistered = true;
             progressDialog.dismiss();
+            //We do not need location updates anymore.
             manager.removeUpdates(this);
 
-        }
+
 
     }
 

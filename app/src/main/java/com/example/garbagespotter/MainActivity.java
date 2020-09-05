@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private String currentPhotoPath;
     private String currentImageFileName;
 
-    private static boolean firstLocationRegistered;
     private ProgressDialog progressDialog;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -169,13 +168,15 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 
             //Loading image before getting the location
-            //Code for getting Location and relate to file name stored in currentPhotoPath. We use the gpx format
+            //Code for getting Location and relate to file name stored in currentPhotoPath. We use the gpx format.
 
             progressDialog = ProgressDialog.show(this, "Identifying location", "Location info retrieving...");
 
             locationListener = new CustomLocationListener(currentImageFileName ,recordings,progressDialog, manager);
 
             try {
+
+
                 manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             }catch (SecurityException e)
             {
@@ -185,11 +186,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static boolean isFirstLocationRegistered() {
-        return firstLocationRegistered;
-    }
 
-    public static void setFirstLocationRegistered(boolean firstLocationRegistered) {
-        MainActivity.firstLocationRegistered = firstLocationRegistered;
-    }
+
+
 }
