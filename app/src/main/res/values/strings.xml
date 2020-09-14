@@ -4,4 +4,5 @@
     <string name="gpsStatusString">GPS receiver state :</string>
     <string name="recorBtnString">Locate and take a photo</string>
     <string name="uploadBtnString">Upload Collected Data</string>
+
 </resources>

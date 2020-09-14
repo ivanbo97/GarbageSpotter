@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private String currentPhotoPath;
     private String currentImageFileName;
 
+
+
     private ProgressDialog progressDialog;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -51,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TextView linkTextView = findViewById(R.id.textViewHyperlink);
+        linkTextView.setClickable(true);
 
+        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "Browse through the garbage spotter map at\n<a href='http://192.168.0.103/garbage_proj/osm'> OpenStreetMap </a>";
+        linkTextView.setText(Html.fromHtml(text));
         photosDir  = new File (getExternalCacheDir(),"photos");
         recordings = new File (getExternalCacheDir(),"recordings");
 
@@ -175,8 +184,6 @@ public class MainActivity extends AppCompatActivity {
             locationListener = new CustomLocationListener(currentImageFileName ,recordings,progressDialog, manager);
 
             try {
-
-
                 manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             }catch (SecurityException e)
             {
