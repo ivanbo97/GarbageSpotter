@@ -6,3 +6,5 @@ Having that information people can organize events for cleaning the polluted pla
 
 You can record the location of the polluted place even without having mobile or internet connection because this application obtains data directly from the GPS receiever. Once you have internet, you can upload the recorded places and pictures to the server.
  ##### ***Planning for an update related to changing the waypoint icons and photos after cleaning of the place has been done.
+ 
+ [[https://github.com/ivanbo97/GarbageSpotter/blob/master/example_pics/garbage_spotter_example.png|alt=octocat]]
