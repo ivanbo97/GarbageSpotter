@@ -8,3 +8,7 @@ You can record the location of the polluted place even without having mobile or 
  ##### ***Planning for an update related to changing the waypoint icons and photos after cleaning of the place has been done.
  
  [[https://github.com/ivanbo97/GarbageSpotter/blob/master/example_pics/garbage_spotter_example.png|alt=octocat]]
+
+### An example of marked polluted place
+
+![ExampleAppPic](https://i.ibb.co/6B7p8Tz/garbage-spotter-example-1.png)
